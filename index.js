@@ -1,9 +1,7 @@
 const express=require("express")
 const app=express()
 
-app.get("/",(req,res)=>{
-    res.send("Hellos")
-})
+app.use("/authenticate",require("./services/authentication/main.js"))
 app.listen(5000,()=>{
     console.log("Server has started")
 })
